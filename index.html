@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto</title>
+    <link rel="stylesheet" href="editor.css">
+    <script src="https://kit.fontawesome.com/5b266e7995.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h2>Editor De Texto</h2>
+    <app id="app">
+        <div class="ferramentas">
+            <select id="fonts"></select>
+            <select id="tamanho"></select>
+            <i id="bold" class="btn btn-bold"><b>B</b></i>
+            <i id="italic" class="btn fa-solid fa-italic"></i>
+            <i id="underline" class="btn fa-solid fa-underline"></i>
+            <div class="list">
+                <i id="insertUnorderedList" class="btn fa-solid fa-list"></i>
+                <i id="insertOrderedList" class="fa-solid fa-list-ol"></i>
+            </div>
+            <div class="link-div">
+                <i id="createLink" class="btn fa-solid fa-link"></i>
+                <i id="unlink" class="btn fa-solid fa-unlink"></i>
+            </div>
+            <div class="align">
+                <i id="justifyLeft" class="btn fa-solid fa-align-left"></i>
+                <i id="justifyCenter" class="btn fa-solid fa-align-justify"></i>
+                <i id="justifyRight" class="btn fa-solid fa-align-right"></i>
+            </div>
+            <i id="save" class="btn fa-solid fa-floppy-disk"></i>
+        </div>
+        <iframe id="editor" contenteditable="true" src="about:blank"></iframe>
+    </app>
+    <script type="text/javascript" src="editor.js"></script>
+</body>
+
+</html>
