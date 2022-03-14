@@ -1,20 +1,25 @@
 window.onload = () => {
     const body = document.querySelector("body");
     const app = document.querySelector("#app");
+    let modelos = document.querySelector(".modelos");
     let btns = document.querySelectorAll(".btn");
     let editor = document.querySelector("iframe");
     editor.contentDocument.designMode = "on";
     let att = editor.contentDocument;
     btns.forEach(btn => {
         btn.addEventListener("click", () => {
-            if (btn.id != 'save') {
+            console.log(btn.id)
+            if (btn.id != 'save' || btn.id != 'open') {
                 let paramentro = null;
                 if (btn.id == "createLink") paramentro = prompt("Digite seu link aqui:");
                 att.execCommand(btn.id, false, paramentro);
             } else {
                 alert("Função Desabilitada!");
             }
-
+            if (btn.id === 'open') {
+                if (modelos.style.right == "0px") modelos.style.right = "-100%";
+                else modelos.style.right = "0px";
+            }
         });
     });
 
@@ -55,4 +60,13 @@ window.onload = () => {
             editor.style.width = "";
         }
     }
+
+    let modes = document.querySelector("#modelos-base").querySelectorAll("a");
+    modes.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log("teste")
+            modelos.style.right = "-100%";
+            editor.src = 'modelos/' + item.textContent + ".html";
+        });
+    });
 }
