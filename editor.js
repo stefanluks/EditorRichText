@@ -8,17 +8,13 @@ window.onload = () => {
     let att = editor.contentDocument;
     btns.forEach(btn => {
         btn.addEventListener("click", () => {
-            console.log(btn.id)
-            if (btn.id != 'save' || btn.id != 'open') {
+            if (btn.id != 'save') {
                 let paramentro = null;
                 if (btn.id == "createLink") paramentro = prompt("Digite seu link aqui:");
                 att.execCommand(btn.id, false, paramentro);
-            } else {
-                alert("Função Desabilitada!");
             }
-            if (btn.id === 'open') {
-                if (modelos.style.right == "0px") modelos.style.right = "-100%";
-                else modelos.style.right = "0px";
+            if (btn.id === 'save') {
+                alert("Função Desabilitada!");
             }
         });
     });
@@ -60,13 +56,4 @@ window.onload = () => {
             editor.style.width = "";
         }
     }
-
-    let modes = document.querySelector("#modelos-base").querySelectorAll("a");
-    modes.forEach(item => {
-        item.addEventListener('click', () => {
-            console.log("teste")
-            modelos.style.right = "-100%";
-            editor.src = 'modelos/' + item.textContent + ".html";
-        });
-    });
 }
